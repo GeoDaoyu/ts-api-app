@@ -3,10 +3,12 @@ import MapView from "esri/views/MapView";
 import WebTileLayer from "esri/layers/WebTileLayer";
 import TileInfo from "esri/layers/support/TileInfo";
 import SpatialReference from "esri/geometry/SpatialReference";
+import Basemap from "esri/Basemap";
 
 const spatialReference = new SpatialReference({
   wkid: 4326
 });
+
 const tileInfo = new TileInfo({
   dpi: 90.71428571427429,
   lods: [
@@ -140,14 +142,16 @@ const webTileLayer = new WebTileLayer({
   spatialReference
 } as WebTileLayer);
 
+const basemap = new Basemap({
+  baseLayers: [webTileLayer]
+})
+
 const map = new EsriMap({
-  basemap: {
-    baseLayers: [webTileLayer]
-  }
+  basemap
 });
 
 const view = new MapView({
-  map: map,
+  map,
   container: "viewDiv",
   center: [120, 32],
   zoom: 8

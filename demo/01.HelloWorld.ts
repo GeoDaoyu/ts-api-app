@@ -6,7 +6,7 @@ const map = new EsriMap({
 });
 
 const view = new MapView({
-  map: map,
+  map,
   container: "viewDiv",
   center: [-118.244, 34.052],
   zoom: 12
