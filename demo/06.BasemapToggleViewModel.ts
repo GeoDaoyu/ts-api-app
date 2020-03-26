@@ -3,7 +3,9 @@ import MapView from "esri/views/MapView";
 import WebTileLayer from "esri/layers/WebTileLayer";
 import TileInfo from "esri/layers/support/TileInfo";
 import SpatialReference from "esri/geometry/SpatialReference";
-import Basemap from "esri/Basemap";
+import BasemapToggleViewModel from "esri/widgets/BasemapToggle/BasemapToggleViewModel";
+import domConstruct from "dojo/dom-construct";
+import on from "dojo/on";
 
 const spatialReference = SpatialReference.WebMercator;
 
@@ -125,19 +127,31 @@ const webTileLayer = new WebTileLayer({
   spatialReference
 } as WebTileLayer);
 
-const basemap = new Basemap({
-  baseLayers: [webTileLayer]
-});
-
 const map = new EsriMap({
-  basemap
+  basemap: {
+    thumbnailUrl: "https://geodaoyu.arcgisonline.cn/arcgis/api/4.14/esri/images/basemap/gray.jpg",
+    baseLayers: [webTileLayer]
+  }
 });
 
 const view = new MapView({
-  map,
+  map: map,
   container: "viewDiv",
   center: [120, 32],
   zoom: 8
+});
+
+const basemapToggleViewModel = new BasemapToggleViewModel({
+  view: view, 
+  nextBasemap: "hybrid"
+});
+
+const html = `<button id="btn" style="position: absolute; left: 50px; bottom: 50px">底图切换</button>`
+domConstruct.place(html, view.container, "last");
+
+const btn = document.getElementById("btn");
+on(btn, "click", () => {
+  basemapToggleViewModel.toggle();
 });
 
 view.ui.remove("attribution");

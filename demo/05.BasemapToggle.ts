@@ -5,9 +5,8 @@ import TileInfo from "esri/layers/support/TileInfo";
 import SpatialReference from "esri/geometry/SpatialReference";
 import BasemapToggle from "esri/widgets/BasemapToggle";
 
-const spatialReference = new SpatialReference({
-  wkid: 3857
-});
+const spatialReference = SpatialReference.WebMercator;
+
 const tileInfo = new TileInfo({
   dpi: 90.71428571427429,
   lods: [{

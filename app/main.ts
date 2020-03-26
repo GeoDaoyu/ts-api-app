@@ -3,7 +3,9 @@ import MapView from "esri/views/MapView";
 import WebTileLayer from "esri/layers/WebTileLayer";
 import TileInfo from "esri/layers/support/TileInfo";
 import SpatialReference from "esri/geometry/SpatialReference";
-import BasemapToggle from "esri/widgets/BasemapToggle";
+import BasemapToggleViewModel from "esri/widgets/BasemapToggle/BasemapToggleViewModel";
+import domConstruct from "dojo/dom-construct";
+import on from "dojo/on";
 
 const spatialReference = new SpatialReference({
   wkid: 3857
@@ -140,11 +142,17 @@ const view = new MapView({
   zoom: 8
 });
 
-const basemapToggle = new BasemapToggle({
+const basemapToggleViewModel = new BasemapToggleViewModel({
   view: view, 
   nextBasemap: "hybrid"
 });
 
-view.ui.add(basemapToggle, "bottom-left");
+const html = `<button id="btn" style="position: absolute; left: 50px; bottom: 50px">底图切换</button>`
+domConstruct.place(html, view.container, "last");
+
+const btn = document.getElementById("btn");
+on(btn, "click", () => {
+  basemapToggleViewModel.toggle();
+});
 
 view.ui.remove("attribution");

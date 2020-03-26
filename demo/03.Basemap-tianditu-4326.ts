@@ -5,9 +5,7 @@ import TileInfo from "esri/layers/support/TileInfo";
 import SpatialReference from "esri/geometry/SpatialReference";
 import Basemap from "esri/Basemap";
 
-const spatialReference = new SpatialReference({
-  wkid: 4326
-});
+const spatialReference = SpatialReference.WGS84;
 
 const tileInfo = new TileInfo({
   dpi: 90.71428571427429,
@@ -144,7 +142,7 @@ const webTileLayer = new WebTileLayer({
 
 const basemap = new Basemap({
   baseLayers: [webTileLayer]
-})
+});
 
 const map = new EsriMap({
   basemap
