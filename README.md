@@ -39,7 +39,22 @@ cd ts-api-app
 tsc -w
 ~~~
 
+## 检索
+
+列表提供检索功能，可检索感兴趣的关键字，也可通过bilibili BV号观看对应视频。
+
+| FileName                  | Keyword                                       | BV           |
+| ------------------------- | --------------------------------------------- | ------------ |
+| 01.HelloWorld             | Map,MapView                                   | BV1JE411g7Wm |
+| 02.Basemap-baseLayers     | Basemap,TileLayer                             | BV147411f7rs |
+| 03.Basemap-tianditu-4326  | SpatialReference,WebTileLayer,TileInfo,天地图 | BV1y7411R7cS |
+| 04.Basemap-tianditu-3857  | SpatialReference,WebTileLayer,TileInfo,天地图 | BV1y7411R7cS |
+| 05.BasemapToggle          | BasemapToggle                                 | BV1dg4y1b7Xg |
+| 06.BasemapToggleViewModel | BasemapToggleViewModel                        | BV1eZ4y1j7Se |
+|                           |                                               |              |
+
 ## 后续计划
 
-+ 底图切换
-+ 鹰眼图
++ 封装天地图图层
++ BasemapLayerList
++ 卷帘
