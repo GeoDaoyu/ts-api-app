@@ -9,7 +9,7 @@ const tileLayer = new TileLayer({
 
 const basemap = new Basemap({
   baseLayers: [tileLayer]
-})
+});
 
 const map = new EsriMap({
   basemap
