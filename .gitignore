@@ -1,5 +1,3 @@
 /node_modules
-/app/*.js
-/app/*.map
-/utils/*.js
-/utils/*.map
+*.js
+*.js.map

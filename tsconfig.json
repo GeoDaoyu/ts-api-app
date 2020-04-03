@@ -13,8 +13,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "./app/*",
-    "./utils/*",
+    "./app/*"
   ],
   "exclude": [
     "node_modules"
