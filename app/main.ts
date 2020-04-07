@@ -1,45 +1,104 @@
 import EsriMap from "esri/Map";
-import SceneView from "esri/views/SceneView";
+import MapView from "esri/views/MapView";
 import Basemap from "esri/Basemap";
 import TianDiTuLayer from "app/utils/TianDiTuLayer";
-import SpatialReference from "esri/geometry/SpatialReference";
-import domConstruct from "dojo/dom-construct";
-import on from "dojo/on";
-import dom from "dojo/dom";
+import GroupLayer from "esri/layers/GroupLayer";
+import BasemapLayerList from "esri/widgets/BasemapLayerList";
 
-const mapWebMercator = new EsriMap({
-  basemap: new Basemap({
-    baseLayers: [
-      new TianDiTuLayer({
-        urlTemplate: "http://t0.tianditu.com/vec_w/wmts"
-      } as TianDiTuLayer)
-    ]
-  })
+const basemapConfig = [
+  {
+    title: "矢量",
+    layers: [
+      "http://t0.tianditu.com/vec_w/wmts",
+      "http://t0.tianditu.com/cva_w/wmts",
+    ],
+  },
+  {
+    title: "影像",
+    layers: [
+      "http://t0.tianditu.com/img_w/wmts",
+      "http://t0.tianditu.com/cia_w/wmts",
+    ],
+  },
+  {
+    title: "地形",
+    layers: [
+      "http://t0.tianditu.com/ter_w/wmts",
+      "http://t0.tianditu.com/cta_w/wmts",
+    ],
+  },
+  {
+    title: "全球境界",
+    layers: ["http://t0.tianditu.com/ibo_w/wmts"],
+  },
+];
+
+const baseLayers = basemapConfig.reverse().map((item) => {
+  return new GroupLayer({
+    layers: item.layers.map((value) => {
+      return new TianDiTuLayer({
+        urlTemplate: value,
+        title: value.split("/")[3]
+      } as TianDiTuLayer);
+    }),
+    title: item.title,
+  });
 });
 
-const mapWGS84 = new EsriMap({
-  basemap: new Basemap({
-    baseLayers: [
-      new TianDiTuLayer({
-        urlTemplate: "http://t0.tianditu.com/img_c/wmts",
-        spatialReference: SpatialReference.WGS84
-      } as TianDiTuLayer)
-    ]
-  })
+const basemap = new Basemap({
+  baseLayers,
 });
 
-const view = new SceneView({
-  map: mapWebMercator,
-  container: "viewDiv"
+const map = new EsriMap({
+  basemap,
 });
 
-const html = `<button id="btn" style="position: absolute; left: 50px; bottom: 50px">切换坐标</button>`;
-domConstruct.place(html, view.container, "last");
-
-const btn = dom.byId("btn");
-let i = 0;
-on(btn, "click", () => {
-  view.map = (++i % 2 === 0) ? mapWebMercator : mapWGS84;
+const view = new MapView({
+  map,
+  container: "viewDiv",,
+  center: [120, 32],
+  zoom: 8
 });
+
+const basemapLayerList = new BasemapLayerList({
+  view,
+  baseListItemCreatedFunction: defineActions,
+});
+
+function defineActions(event: any) {
+  const item = event.item;
+
+  item.actionsSections = [
+    [
+      {
+        title: "Go to full extent",
+        className: "esri-icon-zoom-out-fixed",
+        id: "full-extent",
+      },
+      {
+        title: "Layer information",
+        className: "esri-icon-description",
+        id: "information",
+      },
+    ],
+    [
+      {
+        title: "Increase opacity",
+        className: "esri-icon-up",
+        id: "increase-opacity",
+      },
+      {
+        title: "Decrease opacity",
+        className: "esri-icon-down",
+        id: "decrease-opacity",
+      },
+    ],
+  ];
+}
+basemapLayerList.on("trigger-action", function (event) {
+  console.log(event);
+});
+
+view.ui.add(basemapLayerList, "top-right");
 
 view.ui.remove("attribution");
