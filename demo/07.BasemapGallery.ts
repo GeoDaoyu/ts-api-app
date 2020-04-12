@@ -52,7 +52,7 @@ const btn = document.getElementById("btn");
 let i = 0;
 on(btn, "click", () => {
   const len = basemapGalleryViewModel.source.basemaps.length;
-  map.basemap = basemapGalleryViewModel.source.basemaps.get("items")[++i % len];
+  map.basemap = basemapGalleryViewModel.source.basemaps.getItemAt(++i % len);
 });
 
 view.ui.remove("attribution");

@@ -4,6 +4,9 @@ import Basemap from "esri/Basemap";
 import TianDiTuLayer from "app/utils/TianDiTuLayer";
 import GroupLayer from "esri/layers/GroupLayer";
 import BasemapLayerList from "esri/widgets/BasemapLayerList";
+import domConstruct from "dojo/dom-construct";
+import on from "dojo/on";
+import query from "dojo/query";
 
 const basemapConfig = [
   {
@@ -31,9 +34,9 @@ const basemapConfig = [
     title: "全球境界",
     layers: ["http://t0.tianditu.com/ibo_w/wmts"],
   },
-];
+].reverse();
 
-const baseLayers = basemapConfig.reverse().map((item) => {
+const baseLayers = basemapConfig.map((item) => {
   return new GroupLayer({
     layers: item.layers.map((value) => {
       return new TianDiTuLayer({
@@ -62,41 +65,24 @@ const view = new MapView({
 
 const basemapLayerList = new BasemapLayerList({
   view,
-  baseListItemCreatedFunction: defineActions,
 });
 
-function defineActions(event: any) {
-  const item = event.item;
 
-  item.actionsSections = [
-    [
-      {
-        title: "Go to full extent",
-        className: "esri-icon-zoom-out-fixed",
-        id: "full-extent",
-      },
-      {
-        title: "Layer information",
-        className: "esri-icon-description",
-        id: "information",
-      },
-    ],
-    [
-      {
-        title: "Increase opacity",
-        className: "esri-icon-up",
-        id: "increase-opacity",
-      },
-      {
-        title: "Decrease opacity",
-        className: "esri-icon-down",
-        id: "decrease-opacity",
-      },
-    ],
-  ];
-}
-basemapLayerList.on("trigger-action", function (event) {
-  console.log(event);
+let checkboxList = ``;
+basemapConfig.forEach((v, i) => {
+  checkboxList = `<input type="checkbox" value="${i}" checked>${v.title}<br />` + checkboxList;
+});
+let html = `<div style="position: absolute; left: 50px; bottom: 50px">
+              ${checkboxList}
+            </div>`;
+domConstruct.place(html, view.container, "last");
+
+const checkboxes = query("input[type=checkbox]");
+on(checkboxes, "click", function () {
+  const checked = this.checked;
+  const index = +this.value;
+  const layer = map.basemap.baseLayers.getItemAt(index);
+  layer.visible = checked;
 });
 
 view.ui.add(basemapLayerList, "top-right");
