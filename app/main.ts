@@ -67,6 +67,9 @@ const basemapLayerList = new BasemapLayerList({
   view,
 });
 
+view.ui.add(basemapLayerList, "top-right");
+
+view.ui.remove("attribution");
 
 let checkboxList = ``;
 basemapConfig.forEach((v, i) => {
@@ -84,7 +87,3 @@ on(checkboxes, "click", function () {
   const layer = map.basemap.baseLayers.getItemAt(index);
   layer.visible = checked;
 });
-
-view.ui.add(basemapLayerList, "top-right");
-
-view.ui.remove("attribution");
