@@ -52,10 +52,12 @@ tsc -w
 | 05.BasemapToggle          | BasemapToggle                                                | BV1dg4y1b7Xg |
 | 06.BasemapToggleViewModel | BasemapToggleViewModel                                       | BV1eZ4y1j7Se |
 | 07.BasemapGallery         | Basemap,BasemapGallery,<br />BasemapGalleryViewModel,<br />LocalBasemapsSource | BV1r5411471d |
-| 08.TianDiTuLayer          | WebTileLayer,天地图                                          |              |
+| 08.TianDiTuLayer          | WebTileLayer,天地图                                          | BV1st4y1U7VB |
+| 09.BasemapLayerList       | BasemapLayerList,GroupLayer                                  | BV1LT4y1G7x9 |
 |                           |                                                              |              |
 
 ## 后续计划
 
-+ BasemapList
++ update api to 4.15
++ import react
 + Swipe
