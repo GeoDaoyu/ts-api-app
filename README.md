@@ -58,6 +58,6 @@ tsc -w
 
 ## 后续计划
 
-+ update api to 4.15
 + import react
 + Swipe
++ layerList
