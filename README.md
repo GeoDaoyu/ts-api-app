@@ -60,4 +60,5 @@ tsc -w
 
 + import react
 + Swipe
-+ layerList
++ FeatureLayer
++ LayerList
