@@ -1,89 +1,32 @@
 import EsriMap from "esri/Map";
 import MapView from "esri/views/MapView";
-import Basemap from "esri/Basemap";
-import TianDiTuLayer from "app/utils/TianDiTuLayer";
-import GroupLayer from "esri/layers/GroupLayer";
-import BasemapLayerList from "esri/widgets/BasemapLayerList";
-import domConstruct from "dojo/dom-construct";
-import on from "dojo/on";
-import query from "dojo/query";
-
-const basemapConfig = [
-  {
-    title: "矢量",
-    layers: [
-      "http://t0.tianditu.com/vec_w/wmts",
-      "http://t0.tianditu.com/cva_w/wmts",
-    ],
-  },
-  {
-    title: "影像",
-    layers: [
-      "http://t0.tianditu.com/img_w/wmts",
-      "http://t0.tianditu.com/cia_w/wmts",
-    ],
-  },
-  {
-    title: "地形",
-    layers: [
-      "http://t0.tianditu.com/ter_w/wmts",
-      "http://t0.tianditu.com/cta_w/wmts",
-    ],
-  },
-  {
-    title: "全球境界",
-    layers: ["http://t0.tianditu.com/ibo_w/wmts"],
-  },
-].reverse();
-
-const baseLayers = basemapConfig.map((item) => {
-  return new GroupLayer({
-    layers: item.layers.map((value) => {
-      return new TianDiTuLayer({
-        urlTemplate: value,
-        title: value.split("/")[3]
-      } as TianDiTuLayer);
-    }),
-    title: item.title,
-  });
-});
-
-const basemap = new Basemap({
-  baseLayers,
-});
+import FeatureLayer from "esri/layers/FeatureLayer";
+import SpatialReference from "esri/geometry/SpatialReference";
 
 const map = new EsriMap({
-  basemap,
+  basemap: "hybrid",
 });
 
 const view = new MapView({
   map,
   container: "viewDiv",
-  center: [120, 32],
-  zoom: 8
+  extent: {
+    xmin: -9177811,
+    ymin: 4247000,
+    xmax: -9176791,
+    ymax: 4247784,
+    spatialReference: SpatialReference.WebMercator,
+  },
+  popup: {
+    defaultPopupTemplateEnabled: true,
+  },
 });
 
-const basemapLayerList = new BasemapLayerList({
-  view,
+const featureLayer = new FeatureLayer({
+  url:
+    "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0",
 });
 
-view.ui.add(basemapLayerList, "top-right");
+map.add(featureLayer);
 
 view.ui.remove("attribution");
-
-let checkboxList = ``;
-basemapConfig.forEach((v, i) => {
-  checkboxList = `<input type="checkbox" value="${i}" checked>${v.title}<br />` + checkboxList;
-});
-let html = `<div style="position: absolute; left: 50px; bottom: 50px">
-              ${checkboxList}
-            </div>`;
-domConstruct.place(html, view.container, "last");
-
-const checkboxes = query("input[type=checkbox]");
-on(checkboxes, "click", function () {
-  const checked = this.checked;
-  const index = +this.value;
-  const layer = map.basemap.baseLayers.getItemAt(index);
-  layer.visible = checked;
-});
