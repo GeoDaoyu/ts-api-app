@@ -154,5 +154,3 @@ const view = new MapView({
   center: [120, 32],
   zoom: 8
 });
-
-view.ui.remove("attribution");

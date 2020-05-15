@@ -28,5 +28,3 @@ const featureLayer = new FeatureLayer({
 });
 
 map.add(featureLayer);
-
-view.ui.remove("attribution");

@@ -69,8 +69,6 @@ const basemapLayerList = new BasemapLayerList({
 
 view.ui.add(basemapLayerList, "top-right");
 
-view.ui.remove("attribution");
-
 let checkboxList = ``;
 basemapConfig.forEach((v, i) => {
   checkboxList = `<input type="checkbox" value="${i}" checked>${v.title}<br />` + checkboxList;

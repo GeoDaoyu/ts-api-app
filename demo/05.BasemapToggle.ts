@@ -145,5 +145,3 @@ const basemapToggle = new BasemapToggle({
 });
 
 view.ui.add(basemapToggle, "bottom-left");
-
-view.ui.remove("attribution");

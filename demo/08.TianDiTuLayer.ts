@@ -41,5 +41,3 @@ let i = 0;
 on(btn, "click", () => {
   view.map = (++i % 2 === 0) ? mapWebMercator : mapWGS84;
 });
-
-view.ui.remove("attribution");

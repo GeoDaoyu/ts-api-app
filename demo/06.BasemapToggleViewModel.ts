@@ -153,5 +153,3 @@ const btn = document.getElementById("btn");
 on(btn, "click", () => {
   basemapToggleViewModel.toggle();
 });
-
-view.ui.remove("attribution");

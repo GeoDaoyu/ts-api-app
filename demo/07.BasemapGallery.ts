@@ -54,5 +54,3 @@ on(btn, "click", () => {
   const len = basemapGalleryViewModel.source.basemaps.length;
   map.basemap = basemapGalleryViewModel.source.basemaps.getItemAt(++i % len);
 });
-
-view.ui.remove("attribution");
