@@ -54,11 +54,13 @@ tsc -w
 | 07.BasemapGallery         | Basemap,BasemapGallery,<br />BasemapGalleryViewModel,<br />LocalBasemapsSource | BV1r5411471d |
 | 08.TianDiTuLayer          | WebTileLayer,天地图                                          | BV1st4y1U7VB |
 | 09.BasemapLayerList       | BasemapLayerList,GroupLayer                                  | BV1LT4y1G7x9 |
+| 10.LayerList              | LayerList,MapImageLayer,GroupLayer                           | BV1Dt4y117KS |
+| 11.FeatureLayer           | FeatureLayer                                                 | BV1dK4y1475e |
+| 12.Graphic                | Graphic,Point,Polyline,Polygon                               |              |
 |                           |                                                              |              |
 
 ## 后续计划
 
 + import react
 + Swipe
-+ FeatureLayer
-+ LayerList
++ draw
