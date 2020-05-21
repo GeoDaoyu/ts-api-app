@@ -10,8 +10,11 @@
 
 ```
 ts-api-app
-├── app (当前装载的demo)
-│   └──  main.ts
+├── app
+│   ├──  utils (工具类)
+│   │      ├──  TianDiTuLayer.ts
+│   │      └──  ...
+│   └──  main.ts (当前装载的demo)
 ├── demo (demo列表)
 │   ├──  01.HellowWorld.ts
 │   └──  ...
@@ -56,7 +59,8 @@ tsc -w
 | 09.BasemapLayerList       | BasemapLayerList,GroupLayer                                  | BV1LT4y1G7x9 |
 | 10.LayerList              | LayerList,MapImageLayer,GroupLayer                           | BV1Dt4y117KS |
 | 11.FeatureLayer           | FeatureLayer                                                 | BV1dK4y1475e |
-| 12.Graphic                | Graphic,Point,Polyline,Polygon                               |              |
+| 12.Graphic                | Graphic,Point,Polyline,Polygon                               | BV14Z4y1p76Y |
+| 13.RailwayLine            | Graphic,Polyline,SimpleLineSymbol                            |              |
 |                           |                                                              |              |
 
 ## 后续计划
