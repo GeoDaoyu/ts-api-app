@@ -63,12 +63,11 @@ tsc -w
 | 13.RailwayLine            | Graphic,Polyline,SimpleLineSymbol                            | [BV1mz411v7Kj](https://www.bilibili.com/video/BV1mz411v7Kj) |
 | 14.VectorTileLayer        | VectorTileLayer                                              | [BV1Za4y1e7zr](https://www.bilibili.com/video/BV1Za4y1e7zr) |
 | 15.Draw-Polyline          | Draw,DrawAction                                              |                                                             |
+| 16.Measure-Polyline       | Draw,DrawAction,geometryEngine                               |                                                             |
 |                           |                                                              |                                                             |
 
 ## 后续计划
 
 + import react
 + Swipe
-+ draw
-+ measurement
 + CoordinateConversion
