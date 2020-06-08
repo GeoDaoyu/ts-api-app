@@ -1,11 +1,9 @@
 import EsriMap from "esri/Map";
 import MapView from "esri/views/MapView";
 import Draw from "esri/views/draw/Draw";
-import geometryEngine from "esri/geometry/geometryEngine"
 import Graphic from "esri/Graphic";
 import Polyline from "esri/geometry/Polyline";
 import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
-import TextSymbol from "esri/symbols/TextSymbol";
 import domConstruct from "dojo/dom-construct";
 
 const map = new EsriMap({
@@ -57,7 +55,7 @@ document.getElementById("line-button").onclick = function() {
       "undo",
       "draw-complete"
     ],
-    measureLine
+    createLine
   );
 };
 
@@ -68,15 +66,16 @@ interface DrawActionEvent {
   vertices: number[][];
 }
 
-function measureLine(event: DrawActionEvent) {
+function createLine(event: DrawActionEvent) {
   view.graphics.removeAll();
 
   const vertices = event.vertices;
 
-  const line = createLine(vertices);
-  const lineLength = geometryEngine.geodesicLength(line, "miles");
   const graphic = new Graphic({
-    geometry: line,
+    geometry: new Polyline({
+      paths: [vertices],
+      spatialReference: view.spatialReference
+    }),
     symbol: new SimpleLineSymbol({
       color: [4, 90, 141],
       width: 4,
@@ -84,23 +83,6 @@ function measureLine(event: DrawActionEvent) {
       join: "round"
     })
   });
-  const text = new Graphic({
-    geometry: line.extent.center,
-    symbol: new TextSymbol({
-      color: [255, 255, 255, 1],
-      haloColor: [0, 0, 0, 0.5],
-      haloSize: 2,
-      text: `${lineLength.toFixed(2)} miles`,
-      font: { size: 14, family: "sans-serif" },
-    })
-  });
 
-  view.graphics.addMany([graphic, text]);
-}
-
-function createLine(vertices: number[][]) {
-  return new Polyline({
-    paths: [vertices],
-    spatialReference: view.spatialReference
-  });
+  view.graphics.add(graphic);
 }
