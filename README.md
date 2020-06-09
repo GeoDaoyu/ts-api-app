@@ -62,8 +62,10 @@ tsc -w
 | 12.Graphic                | Graphic,Point,Polyline,Polygon                               | [BV14Z4y1p76Y](https://www.bilibili.com/video/BV14Z4y1p76Y) |
 | 13.RailwayLine            | Graphic,Polyline,SimpleLineSymbol                            | [BV1mz411v7Kj](https://www.bilibili.com/video/BV1mz411v7Kj) |
 | 14.VectorTileLayer        | VectorTileLayer                                              | [BV1Za4y1e7zr](https://www.bilibili.com/video/BV1Za4y1e7zr) |
-| 15.Draw-Polyline          | Draw,DrawAction                                              |                                                             |
-| 16.Measure-Polyline       | Draw,DrawAction,geometryEngine                               |                                                             |
+| 15.Draw-Polyline          | Draw,DrawAction                                              | [BV15p4y1D7UG](https://www.bilibili.com/video/BV15p4y1D7UG) |
+| 16.Measure-Polyline       | Draw,DrawAction,geometryEngine                               | [BV1hT4y1g7ze](https://www.bilibili.com/video/BV1hT4y1g7ze) |
+| 17.Sketch                 | Sketch,GraphicsLayer                                         |                                                             |
+| 18.Measurement2D          | DistanceMeasurement2D,<br />AreaMeasurement2D                |                                                             |
 |                           |                                                              |                                                             |
 
 ## 后续计划
