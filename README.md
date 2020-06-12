@@ -12,8 +12,8 @@
 ts-api-app
 ├── app
 │   ├──  utils (工具类)
-│   │      ├──  TianDiTuLayer.ts
-│   │      └──  ...
+│   │    ├──  TianDiTuLayer.ts
+│   │    └──  ...
 │   └──  main.ts (当前装载的demo)
 ├── demo (demo列表)
 │   ├──  01.HellowWorld.ts
