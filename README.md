@@ -66,9 +66,14 @@ tsc -w
 | 16.Measure-Polyline       | Draw,DrawAction,geometryEngine                               | [BV1hT4y1g7ze](https://www.bilibili.com/video/BV1hT4y1g7ze) |
 | 17.Sketch                 | Sketch,GraphicsLayer                                         | [BV1Zz411i7fn](https://www.bilibili.com/video/BV1Zz411i7fn) |
 | 18.Measurement2D          | DistanceMeasurement2D,<br />AreaMeasurement2D                | [BV1Zz411i7fn](https://www.bilibili.com/video/BV1Zz411i7fn) |
+| 19.CoordinateConversion   | CoordinateConversion,<br />MapViewPointerMoveEvent           | [BV19Z4y1M73T](https://www.bilibili.com/video/BV1Zz411i7fn) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
 
 + import react
 + Swipe
++ FindTask
++ IdentifyTask
++ QueryTask
+
