@@ -1,8 +1,7 @@
 import EsriMap from "esri/Map";
 import MapView from "esri/views/MapView";
 import FeatureLayer from "esri/layers/FeatureLayer";
-import TextSymbol from "esri/symbols/TextSymbol";
-import { SimpleMarkerSymbol } from "esri/symbols";
+import { TextSymbol, SimpleMarkerSymbol } from "esri/symbols";
 import SimpleRenderer from "esri/renderers/SimpleRenderer";
 import LabelClass from "esri/layers/support/LabelClass";
 
