@@ -1,41 +1,56 @@
 import EsriMap from "esri/Map";
 import MapView from "esri/views/MapView";
-import CoordinateConversion from "esri/widgets/CoordinateConversion";
-import domConstruct from "dojo/dom-construct";
+import ScaleBar from "esri/widgets/ScaleBar";
+import ScaleRangeSlider from "esri/widgets/ScaleRangeSlider";
+import FeatureLayer from "esri/layers/FeatureLayer";
+import SpatialReference from "esri/geometry/SpatialReference";
+
+const featureLayer = new FeatureLayer({
+  url:
+    "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0",
+});
 
 const map = new EsriMap({
-  basemap: "streets"
+  basemap: "hybrid",
+  layers: [featureLayer],
 });
 
 const view = new MapView({
   map,
   container: "viewDiv",
-  center: [120.244, 31.052],
-  zoom: 8
+  extent: {
+    xmin: -9177811,
+    ymin: 4247000,
+    xmax: -9176791,
+    ymax: 4247784,
+    spatialReference: SpatialReference.WebMercator,
+  },
 });
 
-const ccWidget = new CoordinateConversion({
-  view: view
+var scaleBar = new ScaleBar({
+  view: view,
+  unit: "dual",
 });
+view.ui.add(scaleBar, "bottom-left");
 
-view.ui.add(ccWidget, "bottom-left");
 
-view.on(["click", "double-click"], function (e: __esri.MapViewClickEvent) {
-  console.log(e);
-  e.stopPropagation();
+const scaleRangeSlider = new ScaleRangeSlider({
+  view: view,
+  layer: featureLayer,
+  region: "US",
 });
-view.on("mouse-wheel", function (e: __esri.MapViewMouseWheelEvent) {
-  console.log(e);
-});
+view.ui.add(scaleRangeSlider, "bottom-right");
 
-const html = `<div id="coordinate"></div>`;
-domConstruct.place(html, view.container, "last");
-view.on("pointer-move", function (e: __esri.MapViewPointerMoveEvent) {
-  const point = view.toMap(e);
-  const html = `
-  <div id="coordinate"
-      style="position: absolute; left: 15px; bottom: 100px; padding: 10px; background-color: #fff">
-      X:${point.longitude.toFixed(6)}°,Y:${point.latitude.toFixed(6)}°
-  </div>`;
-  domConstruct.place(html, "coordinate", "replace");
+scaleRangeSlider.watch(["minScale", "maxScale"], function (
+  value,
+  oldValue,
+  name
+) {
+  // to update the layer min/max scale based on the slider
+  featureLayer[name] = value;
+  // to goTo the scale
+  view.goTo({
+    scale: value,
+    center: view.center
+  });
 });
