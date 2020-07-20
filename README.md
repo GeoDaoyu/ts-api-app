@@ -69,13 +69,14 @@ tsc -w
 | 19.CoordinateConversion   | CoordinateConversion,<br />MapViewPointerMoveEvent           | [BV19Z4y1M73T](https://www.bilibili.com/video/BV19Z4y1M73T) |
 | 20.PopupTemplate          | PopupTemplate,ActionButton                                   | [BV1eK4y1s7Me](https://www.bilibili.com/video/BV1eK4y1s7Me) |
 | 21.LaberClass             | LabelClass                                                   | [BV1bt4y1Q7Rd](https://www.bilibili.com/video/BV1bt4y1Q7Rd) |
+| 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            |                                                             |
 |                           |                                                              |                                                             |
 
 ## 后续计划
 
-+ import react
-+ Swipe
-+ FindTask
-+ IdentifyTask
-+ QueryTask
+- [ ] ~~import react~~
+- [ ] Swipe
+- [ ] FindTask
+- [ ] IdentifyTask
+- [ ] QueryTask
 
