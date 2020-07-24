@@ -37,6 +37,8 @@ npm install
 
 ## 运行启动
 
+部署到Web服务器下，并替换`index.html`中的api路径。
+
 ~~~ shell
 cd ts-api-app
 tsc -w
@@ -69,13 +71,13 @@ tsc -w
 | 19.CoordinateConversion   | CoordinateConversion,<br />MapViewPointerMoveEvent           | [BV19Z4y1M73T](https://www.bilibili.com/video/BV19Z4y1M73T) |
 | 20.PopupTemplate          | PopupTemplate,ActionButton                                   | [BV1eK4y1s7Me](https://www.bilibili.com/video/BV1eK4y1s7Me) |
 | 21.LaberClass             | LabelClass                                                   | [BV1bt4y1Q7Rd](https://www.bilibili.com/video/BV1bt4y1Q7Rd) |
-| 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            |                                                             |
-|                           |                                                              |                                                             |
+| 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            | [BV17a4y1a7Xr](https://www.bilibili.com/video/BV17a4y1a7Xr) |
+| 23.Swipe                  | Swipe,Expand,destroy                                         |                                                             |
 
 ## 后续计划
 
 - [ ] ~~import react~~
-- [ ] Swipe
+- [x] Swipe
 - [ ] FindTask
 - [ ] IdentifyTask
 - [ ] QueryTask
