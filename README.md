@@ -72,7 +72,8 @@ tsc -w
 | 20.PopupTemplate          | PopupTemplate,ActionButton                                   | [BV1eK4y1s7Me](https://www.bilibili.com/video/BV1eK4y1s7Me) |
 | 21.LaberClass             | LabelClass                                                   | [BV1bt4y1Q7Rd](https://www.bilibili.com/video/BV1bt4y1Q7Rd) |
 | 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            | [BV17a4y1a7Xr](https://www.bilibili.com/video/BV17a4y1a7Xr) |
-| 23.Swipe                  | Swipe,Expand,destroy                                         |                                                             |
+| 23.Swipe                  | Swipe,Expand,destroy                                         | [BV1ri4y1u7wj](https://www.bilibili.com/video/BV1ri4y1u7wj) |
+|                           |                                                              |                                                             |
 
 ## 后续计划
 
