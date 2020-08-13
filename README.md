@@ -73,7 +73,8 @@ tsc -w
 | 21.LaberClass             | LabelClass                                                   | [BV1bt4y1Q7Rd](https://www.bilibili.com/video/BV1bt4y1Q7Rd) |
 | 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            | [BV17a4y1a7Xr](https://www.bilibili.com/video/BV17a4y1a7Xr) |
 | 23.Swipe                  | Swipe,Expand,destroy                                         | [BV1ri4y1u7wj](https://www.bilibili.com/video/BV1ri4y1u7wj) |
-| 24.Bookmarks              | Bookmarks,Viewpoint,WebMap                                   |                                                             |
+| 24.Bookmarks              | Bookmarks,Viewpoint,WebMap                                   | [BV1Nv411i7oH](https://www.bilibili.com/video/BV1Nv411i7oH) |
+| 25.reorder                | reorder,LayerList                                            |                                                             |
 |                           |                                                              |                                                             |
 
 ## 后续计划
