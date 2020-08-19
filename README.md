@@ -74,7 +74,8 @@ tsc -w
 | 22.ScaleBar               | ScaleBar,ScaleRangeSlider,<br />minScale,maxScale            | [BV17a4y1a7Xr](https://www.bilibili.com/video/BV17a4y1a7Xr) |
 | 23.Swipe                  | Swipe,Expand,destroy                                         | [BV1ri4y1u7wj](https://www.bilibili.com/video/BV1ri4y1u7wj) |
 | 24.Bookmarks              | Bookmarks,Viewpoint,WebMap                                   | [BV1Nv411i7oH](https://www.bilibili.com/video/BV1Nv411i7oH) |
-| 25.reorder                | reorder,LayerList                                            |                                                             |
+| 25.reorder                | reorder,LayerList                                            | [BV1y54y1i7Tv](https://www.bilibili.com/video/BV1y54y1i7Tv) |
+| 26.Daylight               | Daylight,Camera,Date                                         |                                                             |
 |                           |                                                              |                                                             |
 
 ## 后续计划
