@@ -22,7 +22,32 @@ const view = new MapView({
 
 const getContent = (feature: Graphic) => {
   console.log(feature);
-  return `<div class="echarts" style="width: 600px;height:400px;"></div>`;
+  const popupDiv = document.createElement("div");
+  popupDiv.style = "width: 600px;height:400px;";
+  popupDiv.classList.add("echarts");
+  const myChart = echarts.init(popupDiv);
+  const option = {
+    title: { 
+      text: "ECharts 入门示例",
+    },
+    tooltip: {},
+    legend: {
+      data: ["销量"],
+    },
+    xAxis: {
+      data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+    },
+    yAxis: {},
+    series: [
+      {
+        name: "销量",
+        type: "bar",
+        data: [5, 20, 36, 10, 10, 20],
+      },
+    ],
+  };
+  myChart.setOption(option);
+  return popupDiv;
 };
 
 const template = new PopupTemplate({
@@ -37,35 +62,3 @@ const featureLayer = new FeatureLayer({
   popupTemplate: template,
 });
 map.add(featureLayer);
-
-
-view.popup.watch("visible", function (newValue, oldValue, property, popup) {
-  if (!newValue) {
-    return;
-  }
-  setTimeout(() => {
-    const dom = document.getElementsByClassName("echarts")[0];
-    const myChart = echarts.init(dom);
-    const option = {
-      title: {
-        text: "ECharts 入门示例",
-      },
-      tooltip: {},
-      legend: {
-        data: ["销量"],
-      },
-      xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-      },
-      yAxis: {},
-      series: [
-        {
-          name: "销量",
-          type: "bar",
-          data: [5, 20, 36, 10, 10, 20],
-        },
-      ],
-    };
-    myChart.setOption(option);
-  }, 2000);
-});
