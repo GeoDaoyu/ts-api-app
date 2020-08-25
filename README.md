@@ -75,7 +75,8 @@ tsc -w
 | 23.Swipe                  | Swipe,Expand,destroy                                         | [BV1ri4y1u7wj](https://www.bilibili.com/video/BV1ri4y1u7wj) |
 | 24.Bookmarks              | Bookmarks,Viewpoint,WebMap                                   | [BV1Nv411i7oH](https://www.bilibili.com/video/BV1Nv411i7oH) |
 | 25.reorder                | reorder,LayerList                                            | [BV1y54y1i7Tv](https://www.bilibili.com/video/BV1y54y1i7Tv) |
-| 26.Daylight               | Daylight,Camera,Date                                         |                                                             |
+| 26.Daylight               | Daylight,Camera,Date                                         | [BV1aa4y177rt](https://www.bilibili.com/video/BV1aa4y177rt) |
+| 27.PopupWithEcharts       | PopupTemplate,echarts                                        | [BV1vf4y1Q7NC](https://www.bilibili.com/video/BV1vf4y1Q7NC) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
