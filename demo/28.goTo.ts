@@ -1,12 +1,10 @@
 import EsriMap from "esri/Map";
 import SceneView from "esri/views/SceneView";
-
 import domConstruct from "dojo/dom-construct";
 import on from "dojo/on";
 
 const map = new EsriMap({
-  basemap: "streets",
-  ground: "world-elevation"
+  basemap: "streets"
 });
 
 const view = new SceneView({
@@ -16,10 +14,6 @@ const view = new SceneView({
   center: [104.07, 30.67]
 });
 
-// [104.07, 30.67] chengdu
-// [116.40, 39.90] beijing
-// [121.47, 31.23] shanghai
-
 const html = `
   <div style="position: absolute; left: 50px; bottom: 50px">
     <button id="then">then</button>
@@ -28,7 +22,7 @@ const html = `
 domConstruct.place(html, view.container, "last");
 
 const options: __esri.GoToOptions3D = {
-  speedFactor: 0.5,
+  speedFactor: 0.1,
   easing: "linear"
 };
 
