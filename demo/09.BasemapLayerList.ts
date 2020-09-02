@@ -1,6 +1,7 @@
 import EsriMap from "esri/Map";
 import MapView from "esri/views/MapView";
 import Basemap from "esri/Basemap";
+// @ts-ignore
 import TianDiTuLayer from "app/utils/TianDiTuLayer";
 import GroupLayer from "esri/layers/GroupLayer";
 import BasemapLayerList from "esri/widgets/BasemapLayerList";

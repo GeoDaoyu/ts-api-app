@@ -23,6 +23,7 @@ const view = new MapView({
 const getContent = (feature: Graphic) => {
   console.log(feature);
   const popupDiv = document.createElement("div");
+  // @ts-ignore
   popupDiv.style = "width: 600px;height:400px;";
   popupDiv.classList.add("echarts");
   const myChart = echarts.init(popupDiv);

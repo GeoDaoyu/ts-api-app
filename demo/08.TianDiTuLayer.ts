@@ -1,6 +1,7 @@
 import EsriMap from "esri/Map";
 import SceneView from "esri/views/SceneView";
 import Basemap from "esri/Basemap";
+// @ts-ignore
 import TianDiTuLayer from "app/utils/TianDiTuLayer";
 import SpatialReference from "esri/geometry/SpatialReference";
 import domConstruct from "dojo/dom-construct";
