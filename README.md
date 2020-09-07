@@ -77,6 +77,8 @@ tsc -w
 | 25.reorder                | reorder,LayerList                                            | [BV1y54y1i7Tv](https://www.bilibili.com/video/BV1y54y1i7Tv) |
 | 26.Daylight               | Daylight,Camera,Date                                         | [BV1aa4y177rt](https://www.bilibili.com/video/BV1aa4y177rt) |
 | 27.PopupWithEcharts       | PopupTemplate,echarts                                        | [BV1vf4y1Q7NC](https://www.bilibili.com/video/BV1vf4y1Q7NC) |
+| 28.goTo                   | goTo,Promise                                                 | [BV1b54y127wX](https://www.bilibili.com/video/BV1b54y127wX) |
+| 29.queryFeatureWithSketch | Sketch,FeatureLayer,queryFeatures<br />highlight,Query,spatialRelationship | [BV1jK4y1a7P8](https://www.bilibili.com/video/BV1jK4y1a7P8) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
