@@ -6,7 +6,7 @@
     "sourceMap": true,
     "jsx": "react",
     "jsxFactory": "tsx",
-    "target": "es5",
+    "target": "ES2016",
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
