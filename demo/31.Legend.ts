@@ -15,10 +15,11 @@ const map = new EsriMap({
 
 const view = new MapView({
   container: "viewDiv",
-  map: map
+  map: map,
 });
 
 view.when(() => {
+  view.goTo(featureLayer.fullExtent);
   const legend = new Legend({
     view: view,
     layerInfos: [
