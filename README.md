@@ -79,6 +79,8 @@ tsc -w
 | 27.PopupWithEcharts       | PopupTemplate,echarts                                        | [BV1vf4y1Q7NC](https://www.bilibili.com/video/BV1vf4y1Q7NC) |
 | 28.goTo                   | goTo,Promise                                                 | [BV1b54y127wX](https://www.bilibili.com/video/BV1b54y127wX) |
 | 29.queryFeatureWithSketch | Sketch,FeatureLayer,queryFeatures<br />highlight,Query,spatialRelationship | [BV1jK4y1a7P8](https://www.bilibili.com/video/BV1jK4y1a7P8) |
+| 30.queryFeatureBySQL      | FeatureLayer,Query                                           | [BV1kD4y1o7Yz](https://www.bilibili.com/video/BV1kD4y1o7Yz) |
+| 31.Legend                 | Legend                                                       | [BV1Qz4y1C7ma](https://www.bilibili.com/video/BV1Qz4y1C7ma) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
