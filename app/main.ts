@@ -7,11 +7,12 @@ import SearchSource from "esri/widgets/Search/SearchSource";
 import Point from "esri/geometry/Point";
 
 interface POI {
+  id: string,
   name: string,
   location: string,
 }
 
-const url = "https://restapi.amap.com/v3/place/text";
+const url = "https://restapi.amap.com/v3/place";
 const key = "bccb00446baf88d1450734bcab2ab5eb"; // 前往此处申请 https://console.amap.com/dev/key
 
 const map = new EsriMap({
@@ -28,7 +29,7 @@ const view = new MapView({
 const customSearchSource = new SearchSource({
   placeholder: "搜地点",
   getSuggestions: function (params) {
-    return esriRequest(url, {
+    return esriRequest(`${url}/text`, {
       query: {
         key,
         keywords: params.suggestTerm,
@@ -39,7 +40,7 @@ const customSearchSource = new SearchSource({
 
       return pois.map(function (feature: POI) {
         return {
-          key: "id",
+          key: feature.id,
           text: feature.name,
           sourceIndex: params.sourceIndex,
         };
@@ -48,14 +49,14 @@ const customSearchSource = new SearchSource({
   },
 
   getResults: function (params) {
-    return esriRequest(url, {
+    return esriRequest(`${url}/detail`, {
       query: {
         key,
-        keywords: params.suggestResult.text,
+        id: params.suggestResult.key,
       },
     }).then(function ({ data }) {
       const { pois } = data;
-      var searchResults = pois.map(function (feature: POI) {
+      const searchResults = pois.map(function (feature: POI) {
         const { location, name } = feature;
         const [x, y] = location.split(",");
         const graphic = new Graphic({
