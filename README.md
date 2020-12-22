@@ -83,6 +83,7 @@ tsc -w
 | 31.Legend                 | Legend                                                       | [BV1Qz4y1C7ma](https://www.bilibili.com/video/BV1Qz4y1C7ma) |
 | 32.UniqueValueRenderer    | UniqueValueRenderer,Legend                                   | [BV1my4y1B7Dm](https://www.bilibili.com/video/BV1my4y1B7Dm) |
 | 33.searchWithCustomsource | esriRequest,Search,SearchSource                              | [BV1N54y1k7N7](https://www.bilibili.com/video/BV1N54y1k7N7) |
+| 34.VideoFusion            | externalRenderers,THREE,video                                | [BV1RV411h7Tv](https://www.bilibili.com/video/BV1RV411h7Tv) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
