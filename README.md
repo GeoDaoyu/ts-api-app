@@ -88,8 +88,6 @@ tsc -w
 
 ## 后续计划
 
-- [ ] ~~import react~~
-- [x] Swipe
 - [ ] FindTask
 - [ ] IdentifyTask
 - [ ] QueryTask
