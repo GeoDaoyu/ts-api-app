@@ -78,10 +78,10 @@ const showQueryResult = (features: Graphic[]) => {
   graphicsLayer.removeAll(); // 清空绘制图形
 }
 
-const workFlow = R.compose(
-  R.andThen(showQueryResult), // 处理查询结果
+const workFlow = R.pipe(
+  generateQuery,              // 使用绘制的图形生成查询条件
   doQuery,                    // 使用查询条件查询返回查询结果      
-  generateQuery               // 使用绘制的图形生成查询条件
+  R.andThen(showQueryResult), // 处理查询结果
 );
 
 // 2.在绘制结束，拿到绘制的图形

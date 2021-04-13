@@ -49,9 +49,7 @@ const createPolygonLayer = (id: string) => {
             ],
           ],
         }),
-        attributes: {
-          ObjectID: 1,
-        },
+      ]
       },
     ],
     renderer: new SimpleRenderer({
