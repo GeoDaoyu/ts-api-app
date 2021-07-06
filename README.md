@@ -84,11 +84,11 @@ tsc -w
 | 32.UniqueValueRenderer    | UniqueValueRenderer,Legend                                   | [BV1my4y1B7Dm](https://www.bilibili.com/video/BV1my4y1B7Dm) |
 | 33.searchWithCustomsource | esriRequest,Search,SearchSource                              | [BV1N54y1k7N7](https://www.bilibili.com/video/BV1N54y1k7N7) |
 | 34.VideoFusion            | externalRenderers,THREE,video                                | [BV1RV411h7Tv](https://www.bilibili.com/video/BV1RV411h7Tv) |
+| 35.hitTest                | hitTest                                                      | [BV1TT4y1T71J](https://www.bilibili.com/video/BV1TT4y1T71J) |
 |                           |                                                              |                                                             |
 
 ## 后续计划
 
-- [ ] FindTask
-- [ ] IdentifyTask
-- [ ] QueryTask
+- 根据工作情况更新
+- 微件为主
 
