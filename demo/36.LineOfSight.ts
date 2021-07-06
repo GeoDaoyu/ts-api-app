@@ -3,6 +3,7 @@ import SceneView from "esri/views/SceneView";
 import WebScene from "esri/WebScene";
 import LineOfSight from "esri/widgets/LineOfSight";
 import VideoExternalRenderer from "./utils/VideoExternalRenderer";
+import * as helpers from "./utils/helpers";
 
 const scene = new WebScene({
   portalItem: {
