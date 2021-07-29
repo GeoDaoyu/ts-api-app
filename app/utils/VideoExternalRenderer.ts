@@ -1,5 +1,5 @@
 // @ts-ignore
-import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.js";
+import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js";
 import SpatialReference from "esri/geometry/SpatialReference";
 import * as helpers from "./helpers";
 import * as externalRenderers from "esri/views/3d/externalRenderers";
